@@ -1,0 +1,26 @@
+@extends('app')
+
+@section('content')
+<title>System Notification</title>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default" style="background-color: whitesmoke;">
+        <div class="panel-body">
+
+	<!-- FUNCTION -->
+	<h3><span class="label label-danger">System error: 403 - It is forbidden!</span></h3>
+	<hr>
+
+	  <p>There page you are trying to access is forbidden.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
+
+
+

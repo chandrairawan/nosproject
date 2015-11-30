@@ -1,0 +1,30 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class PublicAppInfo extends Migration {
+
+	public function up()
+	{
+		Schema::create('public.app_info', function(Blueprint $table)
+		{
+			$table->boolean('validity')->default(0);
+			$table->string('app_version');
+			$table->string('app_domain');
+			$table->string('app_version');
+			$table->string('app_email');
+			$table->text('app_terms');
+			$table->text('app_agree');
+			$table->text('app_policy');
+			$table->string('app_notification');
+			$table->timestamps();
+		});
+	}
+
+	public function down()
+	{
+		Schema::drop('public.app_info');
+	}
+
+}

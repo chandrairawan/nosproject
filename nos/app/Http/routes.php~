@@ -1,0 +1,49 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+Route::get('/', 'WelcomeController@index');
+
+Route::get('stream', 'StreamController@index');
+
+Route::get('home', 'HomeController@index');
+
+Route::get('publish', 'PublicationController@create');
+
+Route::post('publish/record', 'PublicationController@record');
+
+Route::get('system/notification', 'NotificationController@index');
+
+
+//Administration Routes
+
+Route::get('admin/notification', 'AdminController@admin');
+
+Route::get('admin/moderation', 'AdminController@moderation');
+Route::get('admin/moderation/{p_id}/{status}', 'AdminController@moderationRecord');
+
+Route::get('admin/panel', 'AdminController@panel');
+Route::get('admin/suspension', 'AdminController@suspension');
+Route::get('admin/report', 'AdminController@report');
+Route::get('admin/log', 'AdminController@log');
+Route::get('admin/command', 'AdminController@command');
+
+
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
+
+
+Route::get('arduino/{value}', 'ArduinoController@access');
+
+
